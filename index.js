@@ -26,7 +26,14 @@ if (IS_OFFLINE === 'true') {
   dynamoDb = new AWS.DynamoDB.DocumentClient();
 };
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(bodyParser.json({ strict: false }));
+
 
 app.get('/', function (req, res) {
   const data = getAllResults.dummy();
