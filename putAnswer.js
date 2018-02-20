@@ -2,8 +2,8 @@ const getResults = require('./getResults');
 
 const USERS_ANSWERS_TABLE = process.env.USER_ANSWERS_TABLE;
 
-function putUserAnswer(dynamoDb, req, res) {
-    const { userId, questionId, answer } = req.body;
+function putUserAnswer(dynamoDb, theAnswer) {
+    const { userId, questionId, answer } = theAnswer;
 
     if (typeof userId !== 'string') {
        res.status(400).json({ error: '"userId" must be a string' });
