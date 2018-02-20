@@ -6,7 +6,7 @@ function putUserAnswer(dynamoDb, req, res) {
     const { userId, questionId, answer } = req.body;
 
     if (typeof userId !== 'string') {
-       res.status(400).json({ received : req, error: '"userId" must be a string' });
+       res.status(400).json({ error: '"userId" must be a string' });
     } else if (typeof questionId !== 'string') {
         res.status(400).json({ error: '"name" must be a string' });
     }
