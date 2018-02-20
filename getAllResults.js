@@ -1,7 +1,7 @@
 
 const USERS_ANSWERS_TABLE = process.env.USER_ANSWERS_TABLE;
 
-function getAllResults (dynamoDb, req) {
+function getAllResults (dynamoDb) {
 
 
     const params = {
@@ -13,11 +13,12 @@ function getAllResults (dynamoDb, req) {
 
     dynamoDb.get(params, (error, result) => {
         if (error) {
-            console.log(error);
+            //console.log(error);
             return { error: 'Could not get all results' };
         }
-
-        return result ;
+        else {
+            return result ;
+        }
     });
 
 }

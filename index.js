@@ -36,7 +36,7 @@ app.use(bodyParser.json({ strict: false }));
 
 
 app.get('/', function (req, res) {
-  const data = getAllResults.getAllResults(dynamoDb, req);
+  const data = getAllResults.getAllResults(dynamoDb);
   res.send('Hello Friend! \nresults= \n' + data)
 })
 
