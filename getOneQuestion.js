@@ -10,8 +10,8 @@ function getOneQuestion (index) {
     };
 
     const quiz = getQuiz("dummy");
-    if (index >= quiz.length) return defaultQuestion;
-    if (index < 0) return defaultQuestion;
+    if (index > quiz.length) return defaultQuestion;
+    if (index <= 0) return quiz[0];
 
     return quiz[index-1];
 }
