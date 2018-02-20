@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
 const AWS = require('aws-sdk');
-const getOneQuestion = require('getOneQuestion');
+const getOneQuestion = require('getOneQuestion.js');
 const getAllQuestions = require('getAllQuestions');
 const putAnswer = require('putAnswer');
 const getResults = require('getResults');
@@ -35,8 +35,7 @@ app.get('/', function (req, res) {
 
 app.get('/getOneQuestion/:index', function (req, res) {
   const data = getOneQuestion.getOneQuestion(req.params.index);
-  res.json(data)
-  
+  res.json(data);  
 })
 
 // Get User endpoint

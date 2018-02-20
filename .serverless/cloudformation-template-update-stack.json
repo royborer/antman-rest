@@ -111,7 +111,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/my-express-application/dev/1519120878951-2018-02-20T10:01:18.951Z/my-express-application.zip"
+          "S3Key": "serverless/my-express-application/dev/1519123030800-2018-02-20T10:37:10.800Z/my-express-application.zip"
         },
         "FunctionName": "my-express-application-dev-app",
         "Handler": "index.handler",
@@ -126,7 +126,8 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "USERS_TABLE": "users-table-dev"
+            "USERS_TABLE": "users-table-dev",
+            "USER_ANSWERS_TABLE": "users-answers-table-dev"
           }
         }
       },
@@ -135,14 +136,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AppLambdaVersionJBs1LWCZhzh7p9bLJXEJY2Vp2FyvLEVrhjKe3L94oU": {
+    "AppLambdaVersion1xoqMsu7tD6vpaC1REOz4bavNdBzhJbFhycmDwio": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "lTrq7onl5jO+5JTDwr0d+5OyJpdn7ca2hk9qXfVIlXo="
+        "CodeSha256": "RL5C68/Lx18CzQbP1mLY0KXUxdNKEfz5LmCHnLBhx/M="
       }
     },
     "ApiGatewayRestApi": {
@@ -252,7 +253,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1519120879000": {
+    "ApiGatewayDeployment1519123030849": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -319,6 +320,28 @@
         },
         "TableName": "users-table-dev"
       }
+    },
+    "UsersAnswersDynamoDBTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "userId",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "userId",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        },
+        "TableName": "users-answers-table-dev"
+      }
     }
   },
   "Outputs": {
@@ -330,7 +353,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionJBs1LWCZhzh7p9bLJXEJY2Vp2FyvLEVrhjKe3L94oU"
+        "Ref": "AppLambdaVersion1xoqMsu7tD6vpaC1REOz4bavNdBzhJbFhycmDwio"
       }
     },
     "ServiceEndpoint": {
