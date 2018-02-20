@@ -101,8 +101,12 @@ app.post("/users/answers", function (req, res) {
 })
 
 app.get("/users/:userId/quizanswers/:quizId", function (req, res) {
-    getResults(dynamoDb, req, res);
+    getResults.getResultsForQuiz(dynamoDb, req, res);
 })
 
+app.get("/getAllResults", function (req, res) {
+  const data = getAllResults.getAllResults(dynamoDb, req, res);
+  res.json(data);
+})
 
 module.exports.handler = serverless(app);

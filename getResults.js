@@ -35,4 +35,6 @@ function getResultsForQuiz (dynamoDb, req, res) {
 }
 
 
-module.exports = getResultsForQuiz;
+module.exports = { 
+    getResultsForQuiz
+}
