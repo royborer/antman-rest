@@ -36,8 +36,8 @@ app.use(bodyParser.json({ strict: false }));
 
 
 app.get('/', function (req, res) {
-  const data = getAllResults.dummy();
-  res.send('Hello Friend! ' + data)
+  const data = getAllResults.getAllResults();
+  res.send('Hello Friend! \nresults= \n' + data)
 })
 
 app.get('/getOneQuestion/:index', function (req, res) {
