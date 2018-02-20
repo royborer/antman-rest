@@ -32,6 +32,12 @@ app.get('/', function (req, res) {
   res.send('Hello Friend! ' + data)
 })
 
+app.get('/getOneQuestion/:index', function (req, res) {
+  const data = getOneQuestion.getOneQuestion(req.params.index);
+  res.json(data)
+  
+})
+
 // Get User endpoint
 app.get('/users/:userId', function (req, res) {
   const params = {
