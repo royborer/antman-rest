@@ -12,6 +12,7 @@ const getResults = require('getResults');
 const getAllResults = require('getAllResults');
 
 const USERS_TABLE = process.env.USERS_TABLE;
+const USERS_TABLE = process.env.USER_ANSWERS_TABLE;
 
 const IS_OFFLINE = process.env.IS_OFFLINE;
 let dynamoDb;

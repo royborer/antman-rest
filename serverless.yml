@@ -5,7 +5,8 @@ plugins:
   - serverless-offline #serverless-offline needs to be last in the list
 
 custom:
-  tableName: 'users-table-${self:provider.stage}'
+  usersTableName: 'users-table-${self:provider.stage}'
+  userAnswersTableName: 'users-answers-table-${self:provider.stage}'
   dynamodb:
     start:
       migrate: true
@@ -27,7 +28,8 @@ provider:
       Resource:
         - { "Fn::GetAtt": ["UsersDynamoDBTable", "Arn" ] }
   environment:
-    USERS_TABLE: ${self:custom.tableName}
+    USERS_TABLE: ${self:custom.usersTableName}
+    USER_ANSWERS_TABLE: ${self:custom.userAnswersTableName}
 
 functions:
   app:
@@ -52,4 +54,19 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:custom.tableName}
+        TableName: ${self:custom.usersTableName}
+    UsersAnswersDynamoDBTable:
+          Type: 'AWS::DynamoDB::Table'
+          Properties:
+            AttributeDefinitions:
+              -
+                AttributeName: userId
+                AttributeType: S
+            KeySchema:
+              -
+                AttributeName: userId
+                KeyType: HASH
+            ProvisionedThroughput:
+              ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
+            TableName: ${self:custom.userAnswersTableName}
