@@ -31,8 +31,8 @@ app.get('/users/:userId', function (req, res) {
       res.status(400).json({ error: 'Could not get user' });
     }
     if (result.Item) {
-      const {userId, name} = result.Item;
-      res.json({ userId, name });
+      const {userId, name, options} = result.Item;
+      res.json({ userId, name, options });
     } else {
       res.status(404).json({ error: "User not found" });
     }
@@ -41,7 +41,7 @@ app.get('/users/:userId', function (req, res) {
 
 // Create User endpoint
 app.post('/users', function (req, res) {
-  const { userId, name } = req.body;
+  const { userId, name, options } = req.body;
   if (typeof userId !== 'string') {
     res.status(400).json({ error: '"userId" must be a string' });
   } else if (typeof name !== 'string') {
@@ -53,6 +53,7 @@ app.post('/users', function (req, res) {
     Item: {
       userId: userId,
       name: name,
+      options: options
     },
   };
 
@@ -61,7 +62,7 @@ app.post('/users', function (req, res) {
       console.log(error);
       res.status(400).json({ error: 'Could not create user' });
     }
-    res.json({ userId, name });
+    res.json({ userId, name, options });
   });
 })
 
