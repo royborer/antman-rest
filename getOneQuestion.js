@@ -31,24 +31,25 @@ function getQuiz(quizId) {
             isLast: false
         },
 
+        
         {  
             order: 2,
-            questionId : "124",
-            question : "Do you use Java?",
+            questionId : "126",
+            question : "What do you think of Avichay?",
             possibleAnswers : [ 
-                                { id:"1", text:"yes"},
-                                { id:"2", text:"no"}
+                                { id:"1", text:"sucks"},
+                                { id:"2", text:"great"}
                             ],
             isLast: false
         },
 
         {  
             order: 3,
-            questionId : "126",
-            question : "What do you think of Javascript?",
+            questionId : "124",
+            question : "Do you use Java?",
             possibleAnswers : [ 
-                                { id:"1", text:"sucks"},
-                                { id:"2", text:"great"}
+                                { id:"1", text:"yes"},
+                                { id:"2", text:"no"}
                             ],
             isLast: false
         },
