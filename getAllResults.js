@@ -13,14 +13,16 @@ function getAllResults (dynamoDb, req, res) {
     }
 
     dynamoDb.get(params, (error, result) => {
-        return "Not Yet Implemented";
-        // if (error) {
-        //     //console.log(error);
-        //     return { error: 'Could not get all results' };
-        // }
-        // else {
-        //     return result ;
-        // }
+        //return "Not Yet Implemented";
+        if (error) {
+            //console.log(error);
+            //return { error: 'Could not get all results' };
+            return "some error has occured";
+        }
+        else {
+            //return result ;
+            return "some result has been gathered";
+        }
     });
 
 }
