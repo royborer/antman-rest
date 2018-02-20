@@ -3,7 +3,7 @@ const USERS_ANSWERS_TABLE = process.env.USER_ANSWERS_TABLE;
 
 function getAllResults (dynamoDb, req, res) {
 
-    return "Not Yet Implemented";
+    //return "Not Yet Implemented";
 
     const params = {
         TableName: USERS_ANSWERS_TABLE,
