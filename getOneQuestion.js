@@ -35,7 +35,7 @@ function getQuiz(quizId) {
         {  
             order: 2,
             questionId : "126",
-            question : "What do you think of Avichay?",
+            question : "What do you think of Slim J S ?",
             possibleAnswers : [ 
                                 { id:"1", text:"sucks"},
                                 { id:"2", text:"great"}
