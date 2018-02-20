@@ -22,7 +22,7 @@ function getResultsForQuiz (dynamoDb, req, res) {
             console.log(error);
             res.status(400).json({ error: 'Could not get user answers' });
         }
-        if (result.Item) {
+        if (result != null && result.Item) {
             console.log(result.Item);
 
             //const {userId, questionId} = result.Item;

@@ -27,7 +27,7 @@ function putUserAnswer(dynamoDb, req, res) {
             console.log(error);
             res.status(400).json({ error: 'ERROR' });
         }
-        if (result.Item) {
+        if (result != null && result.Item) {
             console.log(result.Item);
             prevAnswers = result.Item.answers;
         }
