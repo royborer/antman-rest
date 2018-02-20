@@ -1,0 +1,23 @@
+{
+   "userId":"evyatar@gmail.com",
+   "results": [
+       {
+           "questionId" : "1",
+           "question" : "How old are you?",
+           "possibleAnswers" : [
+                               { "id":"1", "text":"below 18"},
+                               { "id":"2", "text":"above 18"}
+                           ],
+           "isLast": "false"
+        },
+        {
+            "questionId" : "2",
+            "question" : "Do You know Slim.js?",
+            "possibleAnswers" : [
+                                { "id":"1", "text":"yes"},
+                                { "id":"2", "text":"no"}
+                            ],
+            "isLast": "true"
+         }
+     ]
+}
