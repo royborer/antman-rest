@@ -104,7 +104,7 @@ app.get("/putAnswer/:user/:question/:myanswer", function (req, res) {
   const theAnswer = { userId: req.params.user, questionId: req.params.question, answer: req.params.myanswer }
   putAnswer.putUserAnswer(dynamoDb, theAnswer, res);
 })
-app.get("/users/:userId/quizanswers/:quizId", function (req, res) {
+app.get("/users/:userId/answers", function (req, res) {
     getResults.getResultsForQuiz(dynamoDb, req, res);
 })
 
