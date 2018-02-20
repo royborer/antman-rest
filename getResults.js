@@ -28,7 +28,7 @@ function getResultsForQuiz (dynamoDb, req, res) {
             //const {userId, questionId} = result.Item;
             res.json( result.Item );
         } else {
-            res.status(404).json({ error: "User not found" });
+            res.status(200).json({ error: "User has no answers" });
         }
     });
 
