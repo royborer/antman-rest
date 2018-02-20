@@ -133,7 +133,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-express-application/dev/1519118153588-2018-02-20T09:15:53.588Z/my-express-application.zip"
+                "S3Key": "serverless/my-express-application/dev/1519120878951-2018-02-20T10:01:18.951Z/my-express-application.zip"
               },
               "FunctionName": "my-express-application-dev-app",
               "Handler": "index.handler",
@@ -157,14 +157,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AppLambdaVersionD8c7ZdbyaWAr7Q6Fq0JeL51l2TfVGkdaxDvE6c": {
+          "AppLambdaVersionJBs1LWCZhzh7p9bLJXEJY2Vp2FyvLEVrhjKe3L94oU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "kwTqai3G8MzusVpZzHfZnQzauHefWZqUDtGI2qjNOd0="
+              "CodeSha256": "lTrq7onl5jO+5JTDwr0d+5OyJpdn7ca2hk9qXfVIlXo="
             }
           },
           "ApiGatewayRestApi": {
@@ -274,7 +274,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1519118153639": {
+          "ApiGatewayDeployment1519120879000": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -352,7 +352,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionD8c7ZdbyaWAr7Q6Fq0JeL51l2TfVGkdaxDvE6c"
+              "Ref": "AppLambdaVersionJBs1LWCZhzh7p9bLJXEJY2Vp2FyvLEVrhjKe3L94oU"
             }
           },
           "ServiceEndpoint": {
@@ -391,8 +391,17 @@
       "vpc": {}
     },
     "custom": {
-      "tableName": "users-table-dev"
+      "tableName": "users-table-dev",
+      "dynamodb": {
+        "start": {
+          "migrate": true
+        }
+      }
     },
+    "plugins": [
+      "serverless-dynamodb-local",
+      "serverless-offline"
+    ],
     "functions": {
       "app": {
         "handler": "index.handler",
@@ -436,10 +445,10 @@
       },
       "Outputs": {}
     },
-    "artifact": "/home/roy/fuse2018/antman-rest/.serverless/my-express-application.zip"
+    "artifact": "/home/evyatar/work/tikal/fuse2018a/server/antman-rest/.serverless/my-express-application.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/my-express-application/dev/1519118153588-2018-02-20T09:15:53.588Z",
+    "artifactDirectoryName": "serverless/my-express-application/dev/1519120878951-2018-02-20T10:01:18.951Z",
     "artifact": "my-express-application.zip"
   }
 }
