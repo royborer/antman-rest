@@ -26,7 +26,7 @@ function putUserAnswer(dynamoDb, req, res) {
                 console.log(error);
                 res.status(400).json({ error: 'Could not create user' });
             }
-            res.json({ userId, questionId, answer });
+            res.status(200).json({ userId, questionId, answer });
         });
 }
 
