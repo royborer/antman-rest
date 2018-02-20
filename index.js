@@ -110,7 +110,7 @@ app.get("/users/:userId/answers", function (req, res) {
 
 app.get("/getAllResults", function (req, res) {
   const data = getAllResults.getAllResults(dynamoDb, req, res);
-  res.json({header: "abc", result: data});
+  //res.json({header: "abc", result: data});
 })
 
 module.exports.handler = serverless(app);

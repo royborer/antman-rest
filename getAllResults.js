@@ -17,11 +17,12 @@ function getAllResults (dynamoDb, req, res) {
         if (error) {
             //console.log(error);
             //return { error: 'Could not get all results' };
-            return "some error has occured";
+            res.json( "some error has occured") ;
         }
         else {
             //return result ;
-            return "some result has been gathered";
+            res.json(result);
+            //return "some result has been gathered";
         }
     });
 

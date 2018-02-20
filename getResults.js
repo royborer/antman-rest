@@ -20,9 +20,9 @@ function getResultsForQuiz (dynamoDb, req, res) {
     dynamoDb.get(params, (error, result) => {
         if (error) {
             console.log(error);
-            res.status(400).json({ error: 'Could not get user answers' });
+            res.status(200).json({ error: 'Could not get user answers' });
         }
-        if (result != null && result.Item) {
+        else if (result != null && result.Item) {
             console.log(result.Item);
 
             //const {userId, questionId} = result.Item;
