@@ -2,7 +2,7 @@ const getResults = require('./getResults');
 
 const USERS_ANSWERS_TABLE = process.env.USER_ANSWERS_TABLE;
 
-function putUserAnswer(dynamoDb, theAnswer) {
+function putUserAnswer(dynamoDb, theAnswer, res) {
     const { userId, questionId, answer } = theAnswer;
 
     if (typeof userId !== 'string') {
