@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
 const AWS = require('aws-sdk');
-
+const getAllResults = require('getAllResults');
 
 const USERS_TABLE = process.env.USERS_TABLE;
 
@@ -24,7 +24,8 @@ if (IS_OFFLINE === 'true') {
 app.use(bodyParser.json({ strict: false }));
 
 app.get('/', function (req, res) {
-  res.send('Hello Friend!')
+  const data = getAllResults.dummy();
+  res.send('Hello Friend! ' + data)
 })
 
 // Get User endpoint
