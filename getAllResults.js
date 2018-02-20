@@ -1,4 +1,6 @@
 
+const USERS_ANSWERS_TABLE = process.env.USER_ANSWERS_TABLE;
+
 function getAllResults () {
 
 
