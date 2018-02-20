@@ -1,8 +1,8 @@
-function dummy () {
+
+function putUserAnswer(userId, questionId, answer) {
     return "dummy";
 }
 
-
 module.exports = {
-    dummy 
+    putUserAnswer
 }

@@ -13,7 +13,7 @@ const AWS = require('aws-sdk');
 const getAllResults = require('getAllResults');
 
 const USERS_TABLE = process.env.USERS_TABLE;
-const USERS_TABLE = process.env.USER_ANSWERS_TABLE;
+const USERS_ANSWERS_TABLE = process.env.USER_ANSWERS_TABLE;
 
 const IS_OFFLINE = process.env.IS_OFFLINE;
 let dynamoDb;
@@ -34,10 +34,10 @@ app.get('/', function (req, res) {
   res.send('Hello Friend! ' + data)
 })
 
-//app.get('/getOneQuestion/:index', function (req, res) {
-//  const data = getOneQuestion.getOneQuestion(req.params.index);
-//  res.json(data);  
-//})
+app.get('/getOneQuestion/:index', function (req, res) {
+  const data = getOneQuestion.getOneQuestion(req.params.index);
+  res.json(data);
+})
 
 // Get User endpoint
 app.get('/users/:userId', function (req, res) {
