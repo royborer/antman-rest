@@ -93,5 +93,9 @@ app.post("/users/answers", function (req, res) {
     putAnswer.putUserAnswer(dynamoDb, req, res);
 })
 
+app.get("/users/:userId/quizanswers/:quizId", function (req, res) {
+    getResults(dynamoDb, req, res);
+})
+
 
 module.exports.handler = serverless(app);
