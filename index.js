@@ -5,10 +5,11 @@ const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
 const AWS = require('aws-sdk');
-const getOneQuestion = require('getOneQuestion.js');
-const getAllQuestions = require('getAllQuestions');
-const putAnswer = require('putAnswer');
-const getResults = require('getResults');
+
+//const getOneQuestion = require('getOneQuestion.js');
+//const getAllQuestions = require('getAllQuestions');
+//const putAnswer = require('putAnswer');
+//const getResults = require('getResults');
 const getAllResults = require('getAllResults');
 
 const USERS_TABLE = process.env.USERS_TABLE;
@@ -33,10 +34,10 @@ app.get('/', function (req, res) {
   res.send('Hello Friend! ' + data)
 })
 
-app.get('/getOneQuestion/:index', function (req, res) {
-  const data = getOneQuestion.getOneQuestion(req.params.index);
-  res.json(data);  
-})
+//app.get('/getOneQuestion/:index', function (req, res) {
+//  const data = getOneQuestion.getOneQuestion(req.params.index);
+//  res.json(data);  
+//})
 
 // Get User endpoint
 app.get('/users/:userId', function (req, res) {
