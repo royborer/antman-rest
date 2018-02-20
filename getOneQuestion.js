@@ -57,7 +57,7 @@ function getQuiz(quizId) {
         {  
             order: 4,
             questionId : "129",
-            question : "How mqny years of experience in Javascript?",
+            question : "How many years of experience in Javascript?",
             possibleAnswers : [ 
                                 { id:"1", text:"2 or less"},
                                 { id:"2", text:"2 - 5 years"},
